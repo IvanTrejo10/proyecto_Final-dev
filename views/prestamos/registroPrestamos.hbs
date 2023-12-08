@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Prestamos</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <h1>Registro de Prestamos</h1>
+
+  <form action="/prestamo" method="post">
+    <label for="usuario">Usuario:</label>
+    <select name="usuario" id="usuario" required>
+      {{#each usuarios}}
+        <option value="{{_id}}">{{nombre}}</option>
+      {{/each}}
+    </select>
+
+    <label for="libro">Libro:</label>
+    <select name="libro" id="libro" required>
+      {{#each libros}}
+        <option value="{{_id}}">{{titulo}}</option>
+      {{/each}}
+    </select>
+
+    <label for="fechaPrestamo">Fecha de préstamo:</label>
+    <input type="date" name="fechaPrestamo" required>
+
+    <label for="fechaDevolucionEstimada">Fecha de devolución estimada:</label>
+    <input type="date" name="fechaDevolucionEstimada" required>
+
+    <button type="submit">Realizar Préstamo</button>
+  </form>
+  
+  <div>
+    <button onclick="window.location.href='http://127.0.0.1:3000/'">REGRESAR</button>
+  </div>
+</body>
+</html>

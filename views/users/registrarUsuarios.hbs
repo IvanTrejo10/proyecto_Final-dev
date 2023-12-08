@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Flash</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        /* Estilos para el mensaje flash */
+        .flash-message {
+            display: none;
+            padding: 10px;
+            background-color: yellow;
+            border: 1px solid orange;
+            text-align: center;
+        }
+        
+        /* Estilos para la imagen */
+        .logo {
+            width: 20%; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantenemos la proporción original */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="card-panel teal lighten-5 col s8 offset-s2">
+            <div class="row center">
+                <img class="logo" src="imagen\favicon.png" alt="" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+            </div>
+            <div class="row">
+                <h4 class="center-align">Log In</h4>
+            </div>
+            <div class="row">
+                <form action="/Usuario" method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="username" id="email" name="mail" type="email" class="validate" />
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate" name="password" />
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10">
+                            <button class="waves-effect waves-light btn">
+                                <i class="material-icons left">send</i>log in
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h1>Registrar Usuario</h1>
+    <div class="flash-message" id="flashMessage">REGISTRA USUARIO.</div>
+    <form action="/usuarios" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="codigoEstudiante">Código de Estudiante:</label>
+        <input type="text" id="codigoEstudiante" name="codigoEstudiante" required>
+
+        <label for="grado">Grado:</label>
+        <input type="text" id="grado" name="grado" required>
+
+        <label for="seccion">Sección:</label>
+        <input type="text" id="seccion" name="seccion" required>
+
+        <button type="submit">Registrar Usuario</button>
+    </form>
+    <div>
+        <button onclick="window.location.href='http://127.0.0.1:3000/'">REGRESAR</button>
+    </div>
+
+    <script>
+        // Mostrar el mensaje flash durante 3 segundos al cargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+            var flashMessage = document.getElementById("flashMessage");
+            flashMessage.style.display = "block";
+            setTimeout(function() {
+                flashMessage.style.display = "none";
+            }, 3000); // Ocultar el mensaje después de 3 segundos (3000 milisegundos)
+        });
+    </script>
+</body>
+
+</html>
